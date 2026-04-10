@@ -19,7 +19,7 @@
 		btnIpFetch.onclick = function () {
 			btnIpFetch.disabled = true;
 			geoLite.fetchPubIPv4(function (arr, x, u, elapsed) {
-				if (!arr) btnIpFetch.disabled = false, alert("Nothing found.");
+				if (!arr) btnIpFetch.disabled = false, alert("Nothing found (timeout, or server error).");
 				else btnIpFetch.disabled = false, ipAddr.value = arr[0] || ipAddr.value, btnIpSearch.onclick();
 				console.log("Result", arr, "from", u, "; elapsed:", elapsed, "[ms]");
 			});
